@@ -1,8 +1,11 @@
-package org.aplas.basicappx;
+package org.aplas.basicappx.basicui;
 
-import android.widget.ImageView;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Space;
 
+import org.aplas.basicappx.MainActivity;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -19,7 +22,7 @@ import java.util.List;
 @Config(manifest=Config.NONE)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class TestA1BasicUIX082 extends ViewTest {
+public class TestA1BasicUIX041 extends ViewTest {
     private MainActivity activity;
     private RelativeLayout layout;
 
@@ -43,29 +46,41 @@ public class TestA1BasicUIX082 extends ViewTest {
         /******** Check components completion ********/
         /** Specified Elements **/
         List<Class> elements = new ArrayList<>();
-        elements.add(androidx.appcompat.widget.AppCompatImageView.class); //Element 1
+        elements.add(Space.class); //Element 1
+        elements.add(LinearLayout.class);  //Element 2
         /************************/
 
         //JUnit Test
-        int prevElement = 6;
+        int prevElement = 2;
         testCompletion(prevElement,elements,layout);
     }
 
     @Test
-    public void check_01_ImageView_Properties() { //Check Layout Specification
+    public void check_01_Space_Properties() { //Check Layout Specification
         //Component properties value
-        int compIdx = 6;
-        ImageView component = (ImageView) layout.getChildAt(compIdx);
+        int compIdx = 2;
+        Space component = (Space) layout.getChildAt(compIdx);
         ElementTest comp = new ElementTest(component);
 
         //Test each item
-        comp.testIdName("img");
-        comp.testWidth(89);
-        comp.testHeight(89);
-        comp.testImageSrc("temperature");
+        comp.testWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        comp.testHeight(11);
         comp.testLayoutBelow(layout.getChildAt(compIdx-1).getId());
-        comp.testLinearHorizontal(true);
-        comp.testTopMargin(11);
+    }
+
+    @Test
+    public void check_02_ChildLayout_Properties() throws Exception { //Check Button Specification
+        //Component properties value
+        int compIdx=3;
+        LinearLayout component = (LinearLayout) layout.getChildAt(compIdx);
+        ElementTest comp = new ElementTest(component);
+
+        //Component properties value
+        comp.testIdName("child1");
+        comp.testWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        comp.testHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        comp.testOrientation(LinearLayout.HORIZONTAL);
+        comp.testLayoutBelow(layout.getChildAt(compIdx-1).getId());
     }
 
 }

@@ -1,10 +1,11 @@
-package org.aplas.basicappx;
+package org.aplas.basicappx.basicui;
 
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import org.aplas.basicappx.MainActivity;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

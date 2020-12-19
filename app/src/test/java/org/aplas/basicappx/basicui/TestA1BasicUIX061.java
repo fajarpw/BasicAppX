@@ -1,4 +1,4 @@
-package org.aplas.basicappx;
+package org.aplas.basicappx.basicui;
 
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -6,6 +6,7 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import org.aplas.basicappx.MainActivity;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

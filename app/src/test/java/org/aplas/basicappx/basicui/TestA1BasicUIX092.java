@@ -1,10 +1,11 @@
-package org.aplas.basicappx;
+package org.aplas.basicappx.basicui;
 
 import android.graphics.Typeface;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import org.aplas.basicappx.MainActivity;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
